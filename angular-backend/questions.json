@@ -1,0 +1,29 @@
+{
+    "questions": [
+        {
+            "id": 1,
+            "question": "Which is the biggest continent",
+            "options": ["asia","africa","north america","europe"]
+        },
+        {
+            "id": 2,
+            "question": "Which is the smallest continent",
+            "options": ["asia","africa","north america","europe"]
+        },
+        {
+            "id": 3,
+            "question": "Which is the highest mountain",
+            "options": ["Everest","Kunchenjunga","K2","Himadri"]
+        },
+        {
+            "id": 4,
+            "question": "Which is the samllest country",
+            "options": ["Bhutan","Nepal","vatican city","Italy"]
+        },
+        {
+            "id": 5,
+            "question": "Which is the biggest mammal",
+            "options": ["Elephant","Blue whale","Giraffe","Anaconda"]
+        }
+    ]
+}

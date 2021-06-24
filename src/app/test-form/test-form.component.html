@@ -1,0 +1,45 @@
+<div *ngIf="showQuizStart" style="margin: 20px;">
+    <mat-card class="example-card">
+        <mat-card-header>
+            <mat-card-title>Welcome to Quiz</mat-card-title>
+            <mat-card-subtitle>by Abhinav</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p>
+                The Quiz consists of {{questions.length}} questions. There is no time limit.
+            </p>
+        </mat-card-content>
+        <mat-card-actions >
+            <button mat-raised-button color="primary" (click)="onStartQuiz()">Start Quiz</button>
+        </mat-card-actions>
+    </mat-card>
+
+</div>
+<div *ngIf="viewQuiz" style="margin: 20px;">
+    <mat-card class="example-card" style="background-color: rgb(247, 200, 112);">
+    <form #f="ngForm" (ngSubmit)="submitQuiz(f)">
+        <div *ngFor="let question of questions;let i = index">
+            <label id="example-radio-group-label">{{question.question}}</label>
+            <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                [(ngModel)]="options[question.id]" name="season{{i}}">
+                <mat-radio-button class="example-radio-button" *ngFor="let option of question.options" [value]="option">
+                    {{option}}
+                </mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+    </form>
+    </mat-card>
+</div>
+
+<div *ngIf="quizCompleted" style="margin: 20px;">
+    <mat-card style="background-color: rgb(247, 200, 112);">Thank You for Your Participation. Click to view you scores
+        <button type="button"  mat-raised-button color="primary" (click)="checkAnswers()">Check answers</button>
+    </mat-card>    
+</div>
+
+<div *ngIf="viewScore" style="margin: 20px;">
+    <mat-card style="background-color: rgb(247, 200, 112);">You have scored: <h4>{{scores}}%</h4>
+        <button type="button"  mat-raised-button color="primary" (click)="retakeTest()">Retake Test</button>
+    </mat-card>    
+</div>
